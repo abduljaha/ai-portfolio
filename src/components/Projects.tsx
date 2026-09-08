@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { projects } from '../data/profile';
+import { profile, projects } from '../data/profile';
 import { ArrowRight, Code } from 'lucide-react';
+import { GithubIcon } from './Icons';
 
 const Projects = () => {
   return (
@@ -79,6 +80,19 @@ const Projects = () => {
                 </div>
               </motion.div>
             ))}
+          </div>
+          
+          <div className="mt-16 flex justify-center">
+            <a 
+              href={profile.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 text-white font-medium flex items-center gap-3 backdrop-blur-sm border border-white/10 transition-all hover:scale-105 active:scale-95 group"
+            >
+              <GithubIcon size={20} />
+              Explore more projects on Github
+              <ArrowRight size={18} className="text-primary-cyan group-hover:translate-x-1 transition-transform" />
+            </a>
           </div>
         </motion.div>
       </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const navLinks = [
@@ -13,7 +13,7 @@ const navLinks = [
   { name: 'Contact', href: '/#contact' },
 ];
 
-const Navbar = ({ profile }: { profile: any }) => {
+const Navbar = ({ profile, isDarkMode, toggleDarkMode }: { profile: any, isDarkMode?: boolean, toggleDarkMode?: () => void }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -41,11 +41,11 @@ const Navbar = ({ profile }: { profile: any }) => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass py-3' : 'bg-transparent py-5'}`}>
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass py-3 border-b shadow-md dark:shadow-none dark:border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-xl font-bold tracking-tighter text-white z-50 flex items-center gap-2">
-            <span className="w-8 h-8 rounded-full bg-gradient-to-tr from-primary-blue to-primary-purple flex items-center justify-center text-sm">
+          <Link to="/" className="text-xl font-bold tracking-tighter text-gray-900 dark:text-white z-50 flex items-center gap-2">
+            <span className="w-8 h-8 rounded-full bg-gradient-to-tr from-primary-blue to-primary-purple flex items-center justify-center text-sm text-gray-900 dark:text-white">
               AI
             </span>
             <span>{profile.name.split(' ')[0]}</span>
@@ -58,20 +58,40 @@ const Navbar = ({ profile }: { profile: any }) => {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className="px-4 py-2 text-sm text-gray-300 hover:text-white rounded-full hover:bg-white/10 transition-colors"
+                className="px-4 py-2 text-sm font-bold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-900 dark:text-white rounded-full hover:bg-gray-200 dark:hover:bg-gray-200 dark:bg-white/10 transition-colors"
               >
                 {link.name}
               </a>
             ))}
+            {toggleDarkMode && (
+              <button
+                onClick={toggleDarkMode}
+                className="ml-4 p-2 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-900 dark:text-white rounded-full hover:bg-gray-200 dark:hover:bg-gray-200 dark:bg-white/10 transition-colors"
+                aria-label="Toggle Dark Mode"
+              >
+                {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+              </button>
+            )}
           </nav>
 
-          {/* Mobile Menu Toggle */}
-          <button 
-            className="md:hidden z-50 text-gray-300 hover:text-white p-2"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="flex items-center gap-4 md:hidden z-50">
+            {toggleDarkMode && (
+              <button
+                onClick={toggleDarkMode}
+                className="p-2 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-900 dark:text-white rounded-full"
+                aria-label="Toggle Dark Mode"
+              >
+                {isDarkMode ? <Sun size={24} /> : <Moon size={24} />}
+              </button>
+            )}
+            {/* Mobile Menu Toggle */}
+            <button 
+              className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-900 dark:text-white p-2"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -90,7 +110,7 @@ const Navbar = ({ profile }: { profile: any }) => {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => scrollToSection(e, link.href)}
-                  className="text-2xl font-semibold text-gray-300 hover:text-white transition-colors"
+                  className="text-2xl font-semibold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-900 dark:text-white transition-colors"
                 >
                   {link.name}
                 </a>

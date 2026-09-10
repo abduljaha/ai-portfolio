@@ -36,7 +36,7 @@ const LiveDashboard = () => {
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
             <span className="text-gradient">Live System Metrics</span>
           </h2>
-          <p className="text-gray-400">Simulated real-time monitoring of AI production infrastructure.</p>
+          <p className="text-gray-600 dark:text-gray-400">Simulated real-time monitoring of AI production infrastructure.</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
@@ -45,7 +45,7 @@ const LiveDashboard = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="glass-card p-6 border border-white/5 relative overflow-hidden group"
+            className="glass-card p-6 border border-gray-200 dark:border-white/5 relative overflow-hidden group"
           >
             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
               <Activity size={64} />
@@ -54,7 +54,7 @@ const LiveDashboard = () => {
               <Activity size={20} />
               <h3 className="font-medium">RAG Query Latency</h3>
             </div>
-            <div className="text-4xl font-bold text-white mb-6">
+            <div className="text-4xl font-bold text-gray-900 dark:text-white mb-6">
               {latency} <span className="text-lg text-gray-500 font-normal">ms</span>
             </div>
             
@@ -78,7 +78,7 @@ const LiveDashboard = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="glass-card p-6 border border-white/5 relative overflow-hidden group"
+            className="glass-card p-6 border border-gray-200 dark:border-white/5 relative overflow-hidden group"
           >
             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
               <Cpu size={64} />
@@ -87,7 +87,7 @@ const LiveDashboard = () => {
               <Cpu size={20} />
               <h3 className="font-medium">LLM Token Throughput</h3>
             </div>
-            <div className="text-4xl font-bold text-white mb-2">
+            <div className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
               {throughput} <span className="text-lg text-gray-500 font-normal">t/s</span>
             </div>
             <p className="text-sm text-green-400 flex items-center gap-1 mt-4">
@@ -102,7 +102,7 @@ const LiveDashboard = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="glass-card p-6 border border-white/5 relative overflow-hidden group"
+            className="glass-card p-6 border border-gray-200 dark:border-white/5 relative overflow-hidden group"
           >
             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
               <Server size={64} />
@@ -111,10 +111,10 @@ const LiveDashboard = () => {
               <Database size={20} />
               <h3 className="font-medium">Vector DB Nodes</h3>
             </div>
-            <div className="text-4xl font-bold text-white mb-2">
+            <div className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
               {activeNodes} <span className="text-lg text-gray-500 font-normal">active</span>
             </div>
-            <p className="text-sm text-gray-400 mt-4">
+            <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
               Distributed across 3 regions
             </p>
           </motion.div>

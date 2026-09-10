@@ -19,7 +19,7 @@ const Projects = () => {
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
               <span className="text-gradient">Featured Projects</span>
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               A selection of my recent work in AI, Machine Learning, and Data Engineering.
             </p>
           </div>
@@ -32,50 +32,51 @@ const Projects = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative"
+                className="group relative h-full"
               >
-                {/* 3D Tilt Effect Container */}
-                <div className="glass-card h-full overflow-hidden flex flex-col transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_30px_-10px_rgba(59,130,246,0.3)] hover:border-primary-blue/30 relative">
+                {/* Gradient Border Container */}
+                <div className="absolute -inset-[1px] bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 rounded-3xl opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-500" />
+                <div className="absolute -inset-[1px] bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 rounded-3xl opacity-20 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="relative h-full flex flex-col bg-[#0f1115] rounded-3xl p-8 transition-transform duration-500">
+                  <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <Code size={120} />
+                  </div>
                   
-                  {/* Decorative glow on hover */}
-                  <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-blue to-primary-purple opacity-0 group-hover:opacity-20 blur transition duration-500 rounded-2xl pointer-events-none"></div>
+                  <div className="flex justify-between items-start mb-6 relative z-10">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-teal-400 transition-colors">
+                      {project.name}
+                    </h3>
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white transition-colors bg-gray-200/50 dark:bg-white/5 p-3 rounded-full hover:bg-gray-200 dark:bg-white/10" aria-label={`View ${project.name} on Code`}>
+                      <GithubIcon size={20} />
+                    </a>
+                  </div>
                   
-                  <div className="p-8 flex flex-col h-full relative z-10 bg-dark-800/90 rounded-2xl">
-                    <div className="flex justify-between items-start mb-6">
-                      <h3 className="text-2xl font-bold text-white group-hover:text-primary-cyan transition-colors">
-                        {project.name}
-                      </h3>
-                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors z-20" aria-label={`View ${project.name} on Code`}>
-                        <Code size={24} />
-                      </a>
-                    </div>
-                    
-                    <p className="text-gray-300 mb-6 flex-grow line-clamp-3">
-                      {project.solution}
-                    </p>
-                    
-                    <div className="flex flex-wrap gap-2 mb-8">
-                      {project.technologies.slice(0, 4).map(tech => (
-                        <span key={tech} className="text-xs px-2.5 py-1 rounded-full bg-primary-blue/10 text-primary-blue border border-primary-blue/20">
-                          {tech}
-                        </span>
-                      ))}
-                      {project.technologies.length > 4 && (
-                        <span className="text-xs px-2.5 py-1 rounded-full bg-white/5 text-gray-400 border border-white/10">
-                          +{project.technologies.length - 4}
-                        </span>
-                      )}
-                    </div>
-                    
-                    <div className="mt-auto pt-6 border-t border-white/10 flex items-center justify-between">
-                      <Link 
-                        to={`/project/${project.id}`}
-                        className="inline-flex items-center gap-2 text-white font-medium group/link"
-                      >
-                        View Details 
-                        <ArrowRight size={18} className="text-primary-purple group-hover/link:translate-x-1 transition-transform" />
-                      </Link>
-                    </div>
+                  <p className="text-gray-700 dark:text-gray-300 mb-6 flex-grow leading-relaxed relative z-10">
+                    {project.solution}
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-2 mb-8 relative z-10">
+                    {project.technologies.slice(0, 4).map(tech => (
+                      <span key={tech} className="text-xs px-3 py-1.5 rounded-full bg-teal-500/10 text-teal-300 border border-teal-500/20 shadow-[0_0_10px_rgba(20,184,166,0.1)]">
+                        {tech}
+                      </span>
+                    ))}
+                    {project.technologies.length > 4 && (
+                      <span className="text-xs px-3 py-1.5 rounded-full bg-gray-200/50 dark:bg-white/5 text-gray-600 dark:text-gray-400 border border-gray-300 dark:border-white/10">
+                        +{project.technologies.length - 4}
+                      </span>
+                    )}
+                  </div>
+                  
+                  <div className="mt-auto pt-6 border-t border-gray-200 dark:border-white/5 flex items-center justify-between relative z-10">
+                    <Link 
+                      to={`/project/${project.id}`}
+                      className="inline-flex items-center gap-2 text-teal-400 font-medium group/link hover:text-teal-300 transition-colors"
+                    >
+                      View Details 
+                      <ArrowRight size={18} className="group-hover/link:translate-x-2 transition-transform" />
+                    </Link>
                   </div>
                 </div>
               </motion.div>
@@ -87,10 +88,10 @@ const Projects = () => {
               href={profile.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 text-white font-medium flex items-center gap-3 backdrop-blur-sm border border-white/10 transition-all hover:scale-105 active:scale-95 group"
+              className="px-8 py-4 rounded-full bg-gray-200/50 dark:bg-white/5 hover:bg-gray-200 dark:bg-white/10 text-gray-900 dark:text-white font-medium flex items-center gap-3 backdrop-blur-sm border border-gray-300 dark:border-white/10 transition-all hover:scale-105 active:scale-95 group"
             >
               <GithubIcon size={20} />
-              Explore more projects on Github
+              Explore more on Github
               <ArrowRight size={18} className="text-primary-cyan group-hover:translate-x-1 transition-transform" />
             </a>
           </div>

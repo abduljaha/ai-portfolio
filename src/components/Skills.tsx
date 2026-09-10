@@ -8,14 +8,14 @@ const SkillCategory = ({ title, items, delay }: { title: string, items: string[]
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay }}
-    className="glass-card p-6 h-full hover:border-primary-blue/30 transition-colors"
+    className="glass-card p-6 h-full hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:border-primary-blue/40 transition-all duration-300 group"
   >
-    <h3 className="text-xl font-semibold mb-6 text-white border-b border-white/10 pb-2">{title}</h3>
+    <h3 className="text-xl font-semibold mb-6 text-gray-900 dark:text-white border-b border-gray-300 dark:border-white/10 pb-2">{title}</h3>
     <div className="flex flex-wrap gap-2">
       {items.map(skill => (
         <span 
           key={skill} 
-          className="px-3 py-1.5 bg-dark-700/50 hover:bg-primary-blue/20 border border-white/5 hover:border-primary-blue/30 rounded-md text-sm text-gray-300 hover:text-white transition-all cursor-default"
+          className="px-3 py-1.5 bg-gray-100 dark:bg-dark-700/50 hover:bg-primary-blue/20 border border-gray-200 dark:border-white/5 hover:border-primary-blue/30 rounded-md text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-all cursor-default"
         >
           {skill}
         </span>

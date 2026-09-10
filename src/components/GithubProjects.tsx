@@ -50,7 +50,7 @@ const GithubProjects = () => {
 
   if (loading) {
     return (
-      <div className="py-20 text-center text-gray-400">
+      <div className="py-20 text-center text-gray-600 dark:text-gray-400">
         <div className="w-8 h-8 border-2 border-primary-blue border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
         Loading GitHub Projects...
       </div>
@@ -79,7 +79,7 @@ const GithubProjects = () => {
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
               <span className="text-gradient">All GitHub Repositories</span>
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               A complete collection of my projects fetched directly from GitHub.
             </p>
           </div>
@@ -95,34 +95,34 @@ const GithubProjects = () => {
                 className="glass-card p-6 flex flex-col h-full hover:border-primary-cyan/40 transition-all hover:-translate-y-1 group"
               >
                 <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center gap-2 text-white">
+                  <div className="flex items-center gap-2 text-gray-900 dark:text-white">
                     <BookOpen size={20} className="text-primary-blue" />
                     <h3 className="font-bold text-lg group-hover:text-primary-cyan transition-colors line-clamp-1">
                       {repo.name}
                     </h3>
                   </div>
-                  <div className="flex gap-2 text-gray-400">
-                    <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  <div className="flex gap-2 text-gray-600 dark:text-gray-400">
+                    <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 dark:text-white transition-colors">
                       <ExternalLink size={18} />
                     </a>
                   </div>
                 </div>
                 
-                <p className="text-gray-400 text-sm mb-6 flex-grow line-clamp-3">
+                <p className="text-gray-600 dark:text-gray-400 text-sm mb-6 flex-grow line-clamp-3">
                   {repo.description || 'No description provided.'}
                 </p>
                 
                 {repo.topics && repo.topics.length > 0 && (
                   <div className="flex flex-wrap gap-2 mb-4">
                     {repo.topics.slice(0, 3).map(topic => (
-                      <span key={topic} className="text-[10px] px-2 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300">
+                      <span key={topic} className="text-[10px] px-2 py-1 rounded-full bg-gray-200/50 dark:bg-white/5 border border-gray-300 dark:border-white/10 text-gray-700 dark:text-gray-300">
                         {topic}
                       </span>
                     ))}
                   </div>
                 )}
                 
-                <div className="flex items-center gap-4 text-xs text-gray-500 mt-auto pt-4 border-t border-white/5">
+                <div className="flex items-center gap-4 text-xs text-gray-500 mt-auto pt-4 border-t border-gray-200 dark:border-white/5">
                   {repo.language && (
                     <div className="flex items-center gap-1.5">
                       <div className="w-2.5 h-2.5 rounded-full bg-primary-blue"></div>
@@ -147,7 +147,7 @@ const GithubProjects = () => {
               href={profile.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-all hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gray-200/50 dark:bg-white/5 hover:bg-gray-200 dark:bg-white/10 border border-gray-300 dark:border-white/10 text-gray-900 dark:text-white transition-all hover:scale-105 active:scale-95"
             >
               <GithubLogo /> View Full Profile on GitHub
             </a>

@@ -66,19 +66,19 @@ const CityBlocks = () => {
 
 const GithubCity = () => {
   return (
-    <section className="py-20 relative z-10 border-t border-white/5">
+    <section className="py-20 relative z-10 border-t border-gray-200 dark:border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <div className="text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
             <span className="text-gradient">3D Contribution City</span>
           </h2>
-          <p className="text-gray-400">Interactive visualization of my coding consistency and GitHub activity.</p>
+          <p className="text-gray-600 dark:text-gray-400">Interactive visualization of my coding consistency and GitHub activity.</p>
         </div>
       </div>
       
-      <div className="w-full h-[400px] sm:h-[500px] relative glass-card border-y border-white/5 overflow-hidden cursor-move">
+      <div className="w-full h-[400px] sm:h-[500px] relative glass-card border-y border-gray-200 dark:border-white/5 overflow-hidden cursor-move">
         <div className="absolute inset-0 z-10 pointer-events-none flex items-center justify-center">
-          <p className="text-white/30 text-sm tracking-widest font-mono select-none">DRAG TO ROTATE</p>
+          <p className="text-gray-900 dark:text-white/30 text-sm tracking-widest font-mono select-none">DRAG TO ROTATE</p>
         </div>
         <Canvas camera={{ position: [30, 25, 30], fov: 45 }} shadows>
           <color attach="background" args={['#050505']} />

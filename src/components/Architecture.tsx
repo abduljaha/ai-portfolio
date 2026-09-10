@@ -10,14 +10,14 @@ const ArchitectureNode = ({ icon: Icon, title, description, delay }: { icon: any
     transition={{ duration: 0.5, delay }}
     className="relative group flex flex-col items-center text-center p-6 glass-card hover:border-primary-cyan/40 hover:-translate-y-1 transition-all z-10 w-48"
   >
-    <div className="w-16 h-16 rounded-2xl bg-dark-900 border border-white/10 flex items-center justify-center mb-4 group-hover:bg-primary-blue/10 group-hover:text-primary-cyan transition-colors">
+    <div className="w-16 h-16 rounded-2xl bg-white dark:bg-dark-900 border border-gray-300 dark:border-white/10 flex items-center justify-center mb-4 group-hover:bg-primary-blue/10 group-hover:text-primary-cyan transition-colors">
       <Icon size={32} />
     </div>
-    <h3 className="font-bold text-white mb-2">{title}</h3>
-    <p className="text-xs text-gray-400">{description}</p>
+    <h3 className="font-bold text-gray-900 dark:text-white mb-2">{title}</h3>
+    <p className="text-xs text-gray-600 dark:text-gray-400">{description}</p>
     
     {/* Connection dot */}
-    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-dark-900 border-2 border-primary-blue hidden md:block"></div>
+    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white dark:bg-dark-900 border-2 border-primary-blue hidden md:block"></div>
   </motion.div>
 );
 
@@ -35,7 +35,7 @@ const Architecture = () => {
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
               <span className="text-gradient">How I Build AI Systems</span>
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               My standard architecture for scalable, production-ready AI applications.
             </p>
           </div>

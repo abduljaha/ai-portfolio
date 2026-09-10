@@ -23,7 +23,7 @@ const Background3D = () => {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (prefersReducedMotion) {
-    return <div className="absolute inset-0 bg-dark-900 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-dark-800 to-dark-900"></div>;
+    return <div className="absolute inset-0 bg-white dark:bg-dark-900 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-dark-800 to-dark-900"></div>;
   }
 
   return (

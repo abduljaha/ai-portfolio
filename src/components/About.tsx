@@ -19,39 +19,39 @@ const About = () => {
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h3 className="text-2xl font-semibold text-white">Career Objective</h3>
-              <p className="text-gray-300 text-lg leading-relaxed">
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Career Objective</h3>
+              <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
                 {profile.bio}
               </p>
               
               <div className="grid grid-cols-2 gap-4 mt-8">
-                <div className="glass-card p-4 flex flex-col items-center justify-center text-center gap-2">
-                  <BrainCircuit className="text-primary-blue" size={32} />
-                  <span className="text-3xl font-bold text-white">{profile.stats.aiProjects}+</span>
-                  <span className="text-sm text-gray-400">AI Projects</span>
+                <div className="glass-card p-4 flex flex-col items-center justify-center text-center gap-2 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:border-primary-blue/40 transition-all duration-300 group cursor-default">
+                  <BrainCircuit className="text-primary-blue group-hover:scale-110 transition-transform" size={32} />
+                  <span className="text-3xl font-bold text-gray-900 dark:text-white">{profile.stats.aiProjects}+</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-400">AI Projects</span>
                 </div>
-                <div className="glass-card p-4 flex flex-col items-center justify-center text-center gap-2">
-                  <Code2 className="text-primary-purple" size={32} />
-                  <span className="text-3xl font-bold text-white">{profile.stats.technologies}+</span>
-                  <span className="text-sm text-gray-400">Technologies</span>
+                <div className="glass-card p-4 flex flex-col items-center justify-center text-center gap-2 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:border-primary-purple/40 transition-all duration-300 group cursor-default">
+                  <Code2 className="text-primary-purple group-hover:scale-110 transition-transform" size={32} />
+                  <span className="text-3xl font-bold text-gray-900 dark:text-white">{profile.stats.technologies}+</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-400">Technologies</span>
                 </div>
-                <div className="glass-card p-4 flex flex-col items-center justify-center text-center gap-2">
-                  <Award className="text-primary-cyan" size={32} />
-                  <span className="text-3xl font-bold text-white">{profile.stats.certifications}</span>
-                  <span className="text-sm text-gray-400">Certifications</span>
+                <div className="glass-card p-4 flex flex-col items-center justify-center text-center gap-2 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:border-primary-cyan/40 transition-all duration-300 group cursor-default">
+                  <Award className="text-primary-cyan group-hover:scale-110 transition-transform" size={32} />
+                  <span className="text-3xl font-bold text-gray-900 dark:text-white">{profile.stats.certifications}</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-400">Certifications</span>
                 </div>
-                <div className="glass-card p-4 flex flex-col items-center justify-center text-center gap-2">
-                  <Database className="text-primary-blue" size={32} />
-                  <span className="text-3xl font-bold text-white">{profile.stats.githubProjects}+</span>
-                  <span className="text-sm text-gray-400">GitHub Repos</span>
+                <div className="glass-card p-4 flex flex-col items-center justify-center text-center gap-2 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:border-primary-blue/40 transition-all duration-300 group cursor-default">
+                  <Database className="text-primary-blue group-hover:scale-110 transition-transform" size={32} />
+                  <span className="text-3xl font-bold text-gray-900 dark:text-white">{profile.stats.githubProjects}+</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-400">GitHub Repos</span>
                 </div>
               </div>
             </div>
             
             <div className="relative w-full aspect-square md:aspect-auto md:h-full min-h-[400px]">
               <div className="absolute inset-0 bg-gradient-to-tr from-primary-blue/20 to-primary-purple/20 rounded-2xl animate-pulse-glow"></div>
-              <div className="absolute inset-4 glass-card overflow-hidden group border border-white/10 p-2">
-                 <div className="relative w-full h-full rounded-xl overflow-hidden border border-white/5">
+              <div className="absolute inset-4 glass-card overflow-hidden group border border-gray-300 dark:border-white/10 p-2">
+                 <div className="relative w-full h-full rounded-xl overflow-hidden border border-gray-200 dark:border-white/5">
                    <img 
                       src="/ai_abstract_visualization.jpg" 
                       alt="AI abstract visualization" 

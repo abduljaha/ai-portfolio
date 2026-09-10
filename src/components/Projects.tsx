@@ -38,16 +38,16 @@ const Projects = () => {
                 <div className="absolute -inset-[1px] bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 rounded-3xl opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-500" />
                 <div className="absolute -inset-[1px] bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 rounded-3xl opacity-20 group-hover:opacity-100 transition-opacity duration-500" />
                 
-                <div className="relative h-full flex flex-col bg-[#0f1115] rounded-3xl p-8 transition-transform duration-500">
+                <div className="relative h-full flex flex-col bg-white dark:bg-[#0f1115] rounded-3xl p-8 transition-transform duration-500">
                   <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
                     <Code size={120} />
                   </div>
                   
                   <div className="flex justify-between items-start mb-6 relative z-10">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-teal-400 transition-colors">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
                       {project.name}
                     </h3>
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white transition-colors bg-gray-200/50 dark:bg-white/5 p-3 rounded-full hover:bg-gray-200 dark:bg-white/10" aria-label={`View ${project.name} on Code`}>
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white transition-colors bg-gray-200/50 dark:bg-white/5 p-3 rounded-full hover:bg-gray-200 dark:hover:bg-white/10" aria-label={`View ${project.name} on Code`}>
                       <GithubIcon size={20} />
                     </a>
                   </div>
@@ -58,7 +58,7 @@ const Projects = () => {
                   
                   <div className="flex flex-wrap gap-2 mb-8 relative z-10">
                     {project.technologies.slice(0, 4).map(tech => (
-                      <span key={tech} className="text-xs px-3 py-1.5 rounded-full bg-teal-500/10 text-teal-300 border border-teal-500/20 shadow-[0_0_10px_rgba(20,184,166,0.1)]">
+                      <span key={tech} className="text-xs px-3 py-1.5 rounded-full bg-teal-50 dark:bg-teal-500/10 text-teal-700 dark:text-teal-300 border border-teal-500/30 dark:border-teal-500/20 shadow-[0_0_10px_rgba(20,184,166,0.1)]">
                         {tech}
                       </span>
                     ))}
@@ -72,7 +72,7 @@ const Projects = () => {
                   <div className="mt-auto pt-6 border-t border-gray-200 dark:border-white/5 flex items-center justify-between relative z-10">
                     <Link 
                       to={`/project/${project.id}`}
-                      className="inline-flex items-center gap-2 text-teal-400 font-medium group/link hover:text-teal-300 transition-colors"
+                      className="inline-flex items-center gap-2 text-teal-600 dark:text-teal-400 font-medium group/link hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
                     >
                       View Details 
                       <ArrowRight size={18} className="group-hover/link:translate-x-2 transition-transform" />

@@ -2,7 +2,7 @@ export const profile = {
   name: "Abduljaha Parchuru",
   role: "AI/ML Engineer | Generative AI Engineer",
   bio: "I build intelligent AI systems, generative AI applications, RAG pipelines, AI agents, and data-driven solutions that solve real-world problems. As a recent B.Tech Computer Science graduate focused on Artificial Intelligence, Machine Learning, and Generative AI, I leverage LLMs, RAG, AI agents, and data engineering technologies to drive innovation.",
-  email: "parchuruabduljaha143@gmail.com",
+  email: "parchuruabduljaha786@gmail.com",
   phone: "+91 9100845631",
   github: "https://github.com/abduljaha",
   linkedin: "https://www.linkedin.com/in/abduljahaparchuru",
@@ -12,7 +12,7 @@ export const profile = {
   stats: {
     aiProjects: 10,
     technologies: 20,
-    certifications: 4,
+    certifications: 6,
     githubProjects: 15
   }
 };
@@ -161,14 +161,24 @@ export const education = [
 
 export const certifications = [
   {
+    name: "Databricks Data Engineering Associate",
+    issuer: "Databricks",
+    date: "Oct 2026 - Oct 2028"
+  },
+  {
+    name: "Databricks Data Analyst Associate",
+    issuer: "Databricks",
+    date: "Oct 2026 - Oct 2028"
+  },
+  {
     name: "Certified in Python",
     issuer: "FreeCodeCamp",
-    date: "2023"
+    date: "2026"
   },
   {
     name: "Certificate of Internship",
     issuer: "The Developers Arena",
-    date: "2024"
+    date: "Jan 2026"
   },
   {
     name: "Certified on Front-End Development",
